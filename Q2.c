@@ -1,19 +1,23 @@
-//Write a recursive function to print first N natural numbers in reverse order
+//Write a recursive function to calculate sum of first N odd natural numbers
 #include"stdio.h"
-int revNum(int);
-int revNum(int n)
-{
-   if(n==0)
-        return 1;
-    printf("%d ",n);
-    revNum(n-1);
-
-}
+int OddNaturalNum(int);
 int main()
 {
-    int num;
+
+    int n;
     printf("Enter a number :");
-    scanf("%d",&num);
-    revNum(num);
-    return 0;
+    scanf("%d",&n);
+    printf("Sum =%d",OddNaturalNum(n));
+  return 0;
+}
+int OddNaturalNum(int x)
+{
+    int sum=0;
+    if(x==1)
+    {
+        return 1;
     }
+ return ((2*x-1)+OddNaturalNum(x-1));
+
+
+}
