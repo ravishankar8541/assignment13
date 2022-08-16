@@ -1,20 +1,19 @@
-//. Write a recursive function to print first N odd natural numbers in reverse order
+//Write a recursive function to calculate sum of squares of first n natural numbers
 #include"stdio.h"
-int OddNum(int);
-int OddNum(int n)
-{
-    if(n==0)
-    return 1;
-     printf("%d ",2*n-1);
-    OddNum(n-1);
-
-}
+int SumSquare(int);
 int main()
 {
-    int num;
+    int n;
     printf("Enter a number :");
-    scanf("%d",&num);
-    OddNum(num);
+    scanf("%d",&n);
+    printf("Sum = %d",SumSquare(n));
     return 0;
-
+}
+int SumSquare(int x)
+{
+    if(x==1)
+    {
+        return 1;
+    }
+    return (x*x+SumSquare(x-1));
 }
