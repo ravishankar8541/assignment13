@@ -1,19 +1,19 @@
-//Write a recursive function to print first N odd natural numbers.
+//3. Write a recursive function to calculate sum of first N even natural numbers.
 #include"stdio.h"
-int OddNum(int);
-int OddNum(int n)
-{
-    if(n==0)
-    return 1;
-    OddNum(n-1);
-    printf("%d ",2*n-1);
-}
+int SumEven(int);
 int main()
 {
-    int num;
+    int n;
     printf("Enter a number :");
-    scanf("%d",&num);
-    OddNum(num);
+    scanf("%d",&n);
+    printf("Sum = %d",SumEven(n));
     return 0;
-
+}
+int SumEven(int x)
+{
+    if(x==1)
+    {
+        return 2;
+    }
+    return (2*x+SumEven(x-1));
 }
