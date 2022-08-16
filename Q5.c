@@ -1,21 +1,17 @@
-//Write a recursive function to print first N even natural numbers
+//Write a recursive function to calculate sum of digits of a given number
 #include"stdio.h"
-int EvenNum(int);
-int EvenNum(int n)
+int SumOfDigit(int);
+int SumOfDigit(int x)
 {
-    if(n==0)
-    return 1;
-
-    EvenNum(n-1);
-    printf("%d ",2*n);
-
+    if(x==0)
+        return 0;
+    return (x%10+SumOfDigit(x/10));
 }
 int main()
 {
-    int num;
+    int n;
     printf("Enter a number :");
-    scanf("%d",&num);
-    EvenNum(num);
+    scanf("%d",&n);
+    printf("Sum of digit of %d is %d ",n,SumOfDigit(n));
     return 0;
-
 }
